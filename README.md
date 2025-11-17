@@ -28,37 +28,37 @@ Ce projet nécessite également FFmpeg, car pydub l'utilise en arrière-plan pou
 
 Installation de FFmpeg :
 
-    Sur Linux (Debian/Ubuntu) :
-    Bash
+Sur Linux (Debian/Ubuntu) :
+```Bash
 
 sudo apt update
 sudo apt install ffmpeg
+```
 
 Sur macOS (avec Homebrew) :
-Bash
+```Bash
 
     brew install ffmpeg
-
-    Sur Windows : Téléchargez les binaires sur le site officiel de FFmpeg et ajoutez-les à votre PATH système.
+```
+Sur Windows : Téléchargez les binaires sur le site officiel de FFmpeg et ajoutez-les à votre PATH système.
 
 🛠️ Installation
 
     Clonez ce dépôt :
-    Bash
+```Bash
 
 git clone https://github.com/smuller59/Music_pipeline.git
 cd Music_pipeline
+```
 
 Installez les dépendances Python requises :
-Bash
-
+```Bash
 pip install -r requirements.txt
-
+```
 (Note : Si vous n'avez pas de requirements.txt, créez-en un ou installez les paquets manuellement)
-Bash
-
+```Bash
     pip install pydub pyyaml
-
+```
 ⚙️ Utilisation
 
 Le projet est piloté par le fichier orchestration.yml. C'est là que vous définissez les étapes de votre traitement audio.
@@ -105,8 +105,7 @@ pipeline_inverser:
 3. Exécutez le pipeline
 
 Lancez le script principal depuis votre terminal :
-Bash
-
+```Bash
 python pipeline.py
-
+```
 Le script lira le fichier orchestration.yml, exécutera tous les pipelines définis et créera les fichiers de sortie dans les dossiers spécifiés.
