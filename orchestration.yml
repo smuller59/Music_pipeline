@@ -1,0 +1,26 @@
+
+pipeline_single:
+
+  - load : ["data/raw/monologue.wav"]
+
+  - step: effet_echo
+    params:
+      delai: 300
+
+  - step: effet_inverser
+
+  - step: effet_combiner
+
+  - export : ["data/processed/monologue.wav"]
+
+
+
+pipeline_duo:
+
+  - load : ["data/processed/monologue.wav", "data/raw/noise.wav"]
+
+  - step: effet_combiner
+
+  - export : ["data/processed/fusion_monologue.wav"]
+
+  - export : ["data/processed/fusion_monologue.mp3"]
