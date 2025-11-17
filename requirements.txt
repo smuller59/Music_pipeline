@@ -1,0 +1,5 @@
+pydub==0.25.1
+pyee==13.0.0
+python-ffmpeg==2.0.12
+PyYAML==6.0.3
+typing_extensions==4.15.0
