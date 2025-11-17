@@ -9,8 +9,6 @@ pipeline_single:
 
   - step: effet_inverser
 
-  - step: effet_combiner
-
   - export : ["data/processed/monologue.wav"]
 
 
