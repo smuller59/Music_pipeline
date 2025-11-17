@@ -83,3 +83,20 @@ REGISTRY = {
     "effet_inverser": effet_inverser,
     "effet_combiner": effet_combiner
 }
+
+with open("orchestration.yml", "r") as f:
+    orchestration = yaml.safe_load(f)
+
+for pipeline in orchestration.values():
+    liste_pistes = []
+    for etape in pipeline:
+        if etape.get("load") is not None:
+            liste_pistes = charger_pistes(etape["load"])
+        elif etape.get("step") is not None:
+            fct = REGISTRY[etape["step"]]
+            params = etape.get("params", {})
+            liste_pistes = fct(liste_pistes, **params)
+        elif etape.get("export") is not None:
+            for index in range(len(liste_pistes)):
+                extension = etape["export"][index].split('.')[-1]
+                liste_pistes[index].export(etape["export"][index], format=extension) 
